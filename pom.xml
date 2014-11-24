@@ -1,8 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sbelei</groupId>
-  <artifactId>soapsample</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>SoapService</name>
-  <description>Soap service sample. I will be use it for load testing.</description>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.sbelei</groupId>
+	<artifactId>soapsample</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SoapService</name>
+	<description>Soap service sample. I will be use it for load testing.</description>
+	<dependencies>
+		<dependency>
+    		<groupId>org.springframework.ws</groupId>
+    		<artifactId>spring-ws-core</artifactId>
+    		<version>2.2.0.RELEASE</version>
+		</dependency>
+		<dependency>
+	    	<groupId>wsdl4j</groupId>
+	    	<artifactId>wsdl4j</artifactId>
+	    	<version>1.6.1</version>
+		</dependency>
+	</dependencies>
 </project>
