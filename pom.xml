@@ -23,7 +23,6 @@
 			<type>maven-plugin</type>
 		</dependency>
 	</dependencies>
-	
 	<build>
 		<plugins>
 			<plugin>
@@ -42,11 +41,8 @@
 			        <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
 			        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 			        <clearOutputDir>false</clearOutputDir>
-			        <packageName>com.sbelei.model</packageName>
+			        <packageName>com.sbelei.generated.model</packageName>
         			<wsdl>true</wsdl>
-			        <!--  To avoid this -->
-			        <!--  Failed to execute goal org.codehaus.mojo:jaxb2-maven-plugin:1.6:xjc (xjc) on project soapsample: No schemas have been found -->
-			        <xmlschema>false</xmlschema>
 			    </configuration>
 			</plugin>		
 		</plugins>
