@@ -16,5 +16,39 @@
 	    	<artifactId>wsdl4j</artifactId>
 	    	<version>1.6.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>jaxb2-maven-plugin</artifactId>
+			<version>1.6</version>
+			<type>maven-plugin</type>
+		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>jaxb2-maven-plugin</artifactId>
+			    <version>1.6</version>
+			    <executions>
+			        <execution>
+			            <id>xjc</id>
+			            <goals>
+			                <goal>xjc</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			    <configuration>
+			        <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
+			        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+			        <clearOutputDir>false</clearOutputDir>
+			        <packageName>com.sbelei.model</packageName>
+        			<wsdl>true</wsdl>
+			        <!--  To avoid this -->
+			        <!--  Failed to execute goal org.codehaus.mojo:jaxb2-maven-plugin:1.6:xjc (xjc) on project soapsample: No schemas have been found -->
+			        <xmlschema>false</xmlschema>
+			    </configuration>
+			</plugin>		
+		</plugins>
+	</build>
 </project>
