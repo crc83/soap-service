@@ -10,7 +10,7 @@ public class SoapUiTest {
 	public void testRunner() throws Exception 
 	{
 	  SoapUITestCaseRunner runner = new SoapUITestCaseRunner(); 
-	  runner.setProjectFile( "src/dist/sample-soapui-project.xml" );
+	  runner.setProjectFile( "src/test/resources/sample-soap-soapui-project.xml" );
 	  runner.run(); 
 	}
 }
