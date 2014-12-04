@@ -4,33 +4,20 @@
 	<artifactId>soapsampletest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
-    <pluginRepositories>
-        <pluginRepository>
-            <id>SmartBearPluginRepository</id>
-            <url>http://www.soapui.org/repository/maven2/</url>
-        </pluginRepository>
-    </pluginRepositories>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.smartbear.soapui</groupId>
-                <artifactId>soapui-pro-maven-plugin</artifactId>
-                <version>4.6.1</version> 
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>loadtest</goal>
-                        </goals>
-                        <configuration>
-                            <projectFile>sample-soap-soapui-project.xml</projectFile>
-                            <projectProperties>
-                                <value>message=Hello World!</value>
-                            </projectProperties>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+	<dependencies>
+  		<dependency>
+    		<groupId>eviware</groupId>
+    		<artifactId>maven-soapui-plugin</artifactId>
+    		<version>4.5.0</version>
+    		<scope>test</scope>
+  		</dependency>
+	</dependencies>
+	
+	<repositories>
+  		<repository>
+    		<id>eviware</id>
+    		<url>http://www.eviware.com/repository/maven2/</url>
+  		</repository>
+	</repositories>
+   
 </project>
