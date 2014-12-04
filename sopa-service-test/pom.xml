@@ -3,28 +3,34 @@
 	<groupId>org.sbelei</groupId>
 	<artifactId>soapsampletest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-  
-	<dependencies>
-		<dependency>
-			<groupId>com.github.redfish4ktc.soapui</groupId>
-			<artifactId>soapui</artifactId>
-			<version>4.0.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-cli</groupId>
-			<artifactId>commons-cli</artifactId>
-			<version>1.2</version>
-		</dependency>	
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	
+    <pluginRepositories>
+        <pluginRepository>
+            <id>SmartBearPluginRepository</id>
+            <url>http://www.soapui.org/repository/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.smartbear.soapui</groupId>
+                <artifactId>soapui-pro-maven-plugin</artifactId>
+                <version>4.6.1</version> 
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>loadtest</goal>
+                        </goals>
+                        <configuration>
+                            <projectFile>sample-soap-soapui-project.xml</projectFile>
+                            <projectProperties>
+                                <value>message=Hello World!</value>
+                            </projectProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
