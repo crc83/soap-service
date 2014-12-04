@@ -49,6 +49,14 @@ public class CountryRepository {
 
 		for (Country country : countries) {
 			if (name.equals(country.getName())) {
+				if ("Spain".equals(name)) {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 				result = country;
 			}
 		}
