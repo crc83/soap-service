@@ -6,6 +6,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+import com.sbelei.minihotel.owner.Country;
 import com.sbelei.minihotel.owner.GetCountryRequest;
 import com.sbelei.minihotel.owner.GetCountryResponse;
 import com.sbelei.minihotel.repository.CountryRepository;
@@ -23,9 +24,13 @@ public class CountryEndpoint {
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
 	@ResponsePayload
-	public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
+	public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) throws CountryNotFoundException {
 		GetCountryResponse response = new GetCountryResponse();
-		response.setCountry(countryRepository.findCountry(request.getName()));
+		Country country = countryRepository.findCountry(request.getName());
+		if (country == null) {
+			throw new CountryNotFoundException(request.getName());
+		}
+		response.setCountry(country);
 
 		return response;
 	}
