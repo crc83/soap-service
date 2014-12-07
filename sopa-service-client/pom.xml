@@ -47,7 +47,7 @@
                     <forceRegenerate>true</forceRegenerate>
                     <schemas>
                         <schema>
-                            <url>http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl</url>
+                            <url>http://localhost:8080/ws/countries.wsdl?wsdl</url>
                         </schema>
                     </schemas>
                 </configuration>
