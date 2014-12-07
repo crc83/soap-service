@@ -29,11 +29,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.1.9.RELEASE</version>
             </plugin>
             <!-- tag::wsdl[] -->
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.11.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -43,7 +45,7 @@
                 </executions>
                 <configuration>
                     <schemaLanguage>WSDL</schemaLanguage>
-                    <generatePackage>hello.wsdl</generatePackage>
+                    <generatePackage>org.sbelei.wsdl</generatePackage>
                     <forceRegenerate>true</forceRegenerate>
                     <schemas>
                         <schema>
