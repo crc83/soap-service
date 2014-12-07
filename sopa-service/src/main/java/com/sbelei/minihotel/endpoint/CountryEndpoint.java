@@ -25,6 +25,7 @@ public class CountryEndpoint {
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
 	@ResponsePayload
 	public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) throws CountryNotFoundException {
+
 		GetCountryResponse response = new GetCountryResponse();
 		Country country = countryRepository.findCountry(request.getName());
 		if (country == null) {

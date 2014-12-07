@@ -1,10 +1,11 @@
 package com.sbelei.minihotel.endpoint;
 
-import javax.xml.ws.WebFault;
+import org.springframework.ws.soap.server.endpoint.annotation.FaultCode;
+import org.springframework.ws.soap.server.endpoint.annotation.SoapFault;
 
 
 @SuppressWarnings("serial")
-@WebFault
+@SoapFault(faultCode = FaultCode.CLIENT)
 public class CountryNotFoundException extends Exception {
 	
 	public CountryNotFoundException(String value) {
